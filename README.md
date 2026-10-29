@@ -69,8 +69,8 @@ QLS-MiCM_Introduction_to_supervised_machine_learning-main/
 ## Installation and Setup
 ### 1. Clone or Download
 ```bash
-git clone https://github.com/<your-org>/QLS-MiCM_Introduction_to_supervised_machine_learning.git
-cd QLS-MiCM_Introduction_to_supervised_machine_learning-main
+git clone https://github.com/QLS-MiCM/SupervisedML.git
+cd SupervisedML
 ```
 
 ### 2. Create Environment
@@ -108,17 +108,23 @@ or
 jupyter notebook
 ```
 
-Then open the notebooks in `Exercises/notebooks/`.
+Then open the notebooks in `Exercises/workbooks/`.
 
-### 6. To generate slides:
-Must have a browser and marp installed.
+### 6. To generate slides (optional)
+Only needed if you edit the slide markdown in `Slides/markdown/`.
+
+Requirements:
+- [Node.js](https://nodejs.org/) LTS (v22 recommended; v26 is not supported by the pinned marp-cli version)
+- Google Chrome, Microsoft Edge or Firefox
+
 ```bash
-pip install npm
-#if needed:
-npm install -g @marp-team/marp-cli
-sudo apt install firefox
+npm install            # installs marp-cli from package.json
+bash build_slides.sh   # rebuilds Slides/markdown/*.md → Slides/PDFs/*.pdf
+```
 
-bash build_slides.sh
+On Windows, if marp cannot find a browser, point it to Edge first:
+```bash
+export CHROME_PATH="/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
 ```
 
 ## Dependencies
